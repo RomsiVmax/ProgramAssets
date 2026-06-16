@@ -21,7 +21,7 @@ git add --all
 cls
 echo Enter the changes:
 set /P commit=""
-if %commit% == "" do (
+if not defined commit (
     git commit -m "Made some changes..."
 ) else (
     git commit -m "%commit%"
