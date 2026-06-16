@@ -21,7 +21,11 @@ git add --all
 cls
 echo Enter the changes:
 set /P commit=""
-git commit -m "%commit%"
+if %commit% == "" do (
+    git commit -m "Made some changes..."
+) else (
+    git commit -m "%commit%"
+)
 cls
 echo Press Enter to push the changes to the server
 pause >nul
