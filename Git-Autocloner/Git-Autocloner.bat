@@ -19,7 +19,9 @@ git init
 cls
 git add --all
 cls
-if "%commit%"=="" (
+echo Enter the changes:
+set /P commit=""
+if not defined commit (
     git commit -m "Made some changes..."
 ) else (
     git commit -m "%commit%"
@@ -27,6 +29,7 @@ if "%commit%"=="" (
 cls
 echo Press Enter to push the changes to the server
 pause >nul
+git pull
 git push
 cls
 echo Changes got pushed, press any key to end the process
