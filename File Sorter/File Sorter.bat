@@ -7,9 +7,6 @@ cd "C:\Program Files\File Sorter\Backend\"
 REM nap stands for name and path
 REM potbf stands for path of the batch file
 REM napotbf stands for name and path of the batch file
-mkdir %USERPROFILE%\OneDrive\Desktop\sort >nul
-echo Lege die zu sortierenden Dateien in den sort-Ordner auf deinem Desktop und druecke eine Taste
-pause > nul
 mkdir %USERPROFILE%\OneDrive\Desktop\sorted >nul
 
 for %%f in (%USERPROFILE%\OneDrive\Desktop\sort\*) do (
@@ -49,4 +46,3 @@ for %%f in (%USERPROFILE%\OneDrive\Desktop\sort\*) do (
 )
 :end
 del "%USERPROFILE%\OneDrive\Desktop\sort" /q /f
-pause
