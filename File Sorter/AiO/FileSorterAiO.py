@@ -181,7 +181,8 @@ def payload3():
 
 
 
-
+def payload4():
+    print("a")
 
 
 
@@ -190,14 +191,18 @@ root = tk.Tk()
 
 
 root.title("VmaxStudios File Sorter")
-root.geometry("500x500+80+300")
+root.geometry("700x700+80+300")
 root.resizable(False, False)
+root.grid_columnconfigure(0, weight=1)
+
+
+
 
 
 
 
 message = tk.Label(root, text="Schritt 1:")
-message.pack()
+message.grid(row=1, column=0, padx=5, pady=5)
 
 payload1b = tk.Button(
     root, text="Erstelle sort-Ordner",
@@ -205,15 +210,20 @@ payload1b = tk.Button(
     fg="black",
     font=("Arial", 12)
 )
-payload1b.pack()
+payload1b.grid(row=1, column=1, padx=5, pady=5)
 
 updateablemessage1 = tk.Label(root, text=f"Ordner existent:{sortdirexists}")
-updateablemessage1.pack()
+updateablemessage1.grid(row=1, column=2, padx=5, pady=5)
+
+
+
+tk.Label(root).grid(row=2, column=0)
+
+
 
 
 message = tk.Label(root, text="Schritt 2:")
-message.pack()
-
+message.grid(row=3, column=0, padx=5, pady=5)
 
 payload2b = tk.Button(
     root, text="Erstelle sorted-Ordner",
@@ -221,29 +231,67 @@ payload2b = tk.Button(
     fg="black",
     font=("Arial", 12)
 )
-payload2b.pack()
+payload2b.grid(row=3, column=1, padx=5, pady=5)
 
 updateablemessage2 = tk.Label(root, text=f"Ordner existent:{sorteddirexists}")
-updateablemessage2.pack()
+updateablemessage2.grid(row=3, column=2, padx=5, pady=5)
+
+
+
+
+tk.Label(root).grid(row=4, column=0)
+
 
 
 
 
 message = tk.Label(root, text="Schritt 3:")
-message.pack()
+message.grid(row=5, column=0, padx=5, pady=5)
 
-message = tk.Label(root, text="Lege die zu sortierenden Dateien in den sort-Ordner!")
-message.pack()
+message = tk.Label(root, text="Lege die zu sortierenden Dateien in den sort-Ordner")
+message.grid(row=5, column=1, padx=5, pady=5)
+
+
+
+
+tk.Label(root).grid(row=6, column=0)
+
+
+
+
 
 message = tk.Label(root, text="Schritt 4:")
-message.pack()
+message.grid(row=7, column=0, padx=5, pady=5)
+
 payload3b = tk.Button(
     root, text="Sortiere!",
     command=payload3,
     fg="black",
     font=("Arial", 12)
 )
-payload3b.pack()
+payload3b.grid(row=7, column=1, padx=5, pady=5)
+
+
+
+
+
+tk.Label(root).grid(row=8, column=0)
+tk.Label(root).grid(row=9, column=0)
+tk.Label(root).grid(row=10, column=0)
+
+
+
+
+
+
+payload4b = tk.Button(
+    root, text="Zum professionellen Modus wechseln",
+    command=payload4,
+    fg="black",
+    font=("Arial", 8)
+)
+payload4b.grid(row=11, column=2, padx=5, pady=5)
+
 
 
 
